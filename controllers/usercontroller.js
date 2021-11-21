@@ -57,8 +57,8 @@ module.exports = {
             // console.log(`input: ${email}, Password: ${password}`)
             const userFind = await Users.findOne({
                 where: {
-                    email: req.body.email,
-                    password: req.body.password
+                    email: email,
+                    password: password
                 }
             })
             // console.log(userFind)
@@ -114,6 +114,30 @@ module.exports = {
 
     updateInfo: async(req, res) =>{
         try{
+            //Taking login method
+            const {
+                emailPrev,
+                passwordPrev,
+                emailNext,
+                passwordNext,
+                description
+            } = req.body
+            // console.log(`input: ${email}, Password: ${password}`)
+            const userFind = await Users.findOne({
+                where: {
+                    email: emailPrev,
+                    password: passwordPrev
+                }
+            })
+            // console.log(userFind)
+            if (userFind) {
+                
+            } else {
+                res.status(404).json({
+                    message: "Email or Password is wrong"
+                })
+                console.log("Failed!")
+            }            
 
         }catch(error){
             console.log(error)

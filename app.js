@@ -40,9 +40,9 @@ app.post('/register', userController.registerPost)
 app.get('/user_list', userController.user_list)
 
 //Update Method here
-app.get()
-app.post()
-
+app.get('/user_update', userController.updateGet)
+// app.post()
+ 
 app.listen(port, () => {
     console.log(`Go to http://localhost:${port}`)
 })
