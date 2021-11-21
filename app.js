@@ -41,8 +41,11 @@ app.get('/user_list', userController.user_list)
 
 //Update Method here
 app.get('/user_update', userController.updateGet)
-// app.post()
- 
+app.post('/user_update', userController.updateInfo) 
+
+//Delete Method here
+
+
 app.listen(port, () => {
     console.log(`Go to http://localhost:${port}`)
 })

@@ -32,7 +32,7 @@ npx sequelize migration:generate --name add-description
     CRUD:
     ✔ Create: register
     ✔ Read: show everythin expect for password(use dashboard method. Example on node-pg/article) (prefer: read from biodata)
-    - Update: edit email, username, password. Preferably (Use login mechanism too), edit description on biodata
+    ✔ Update: edit email, username, password. Preferably (Use login mechanism too), edit description on biodata
     use login form (verify) + additional form for update 
 
     - Delete: use destroy method

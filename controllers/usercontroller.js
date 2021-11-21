@@ -66,7 +66,7 @@ module.exports = {
     
             if (userFind) {
                 res.redirect(`/game?username=${userFind.username}`)
-                console.log(userFind.username)
+                console.log(userFind.username + userFind.id)
             } else {
                 res.status(404).json({
                     message: "Email or Password is wrong"
@@ -120,6 +120,7 @@ module.exports = {
                 passwordPrev,
                 emailNext,
                 passwordNext,
+                username,
                 description
             } = req.body
             // console.log(`input: ${email}, Password: ${password}`)
@@ -131,7 +132,27 @@ module.exports = {
             })
             // console.log(userFind)
             if (userFind) {
-                
+                console.log('REQ: ' + JSON.stringify(req.body))
+                //Update username, email, password
+                await Users.update({
+                    username: username,
+                    email: emailNext,
+                    password: passwordNext
+                },{
+                    where: {
+                      id: userFind.id
+                    }
+                })
+                //Update biodata
+                await UserBiodata.update({
+                    username: username,
+                    description: description
+                },{
+                    where: {
+                      user_id: userFind.id
+                    }
+                })
+                res.redirect('/')                                
             } else {
                 res.status(404).json({
                     message: "Email or Password is wrong"
