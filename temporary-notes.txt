@@ -1,0 +1,36 @@
+config → status: ALREADY SET
+
+app.js → for 
+migration, models  
+    → users →for register, findAll(through models) for login → status: ALREADY SET(first setup)
+    → history →  
+    → biodata → 
+
+generate users
+npx sequelize model:generate --name Users --attributes username:string,email:string,password:string
+npx sequelize model:generate --name UserBiodata --attributes name:string,user_id:integer
+npx sequelize model:generate --name UserHistory --attributes date:date,result:string,user_id:integer
+
+controllers → handle the function so it will be ready to be exported or equivalent for utilities
+
+
+route → handle get and post method, nnti di app.js bakal pake use 
+    → user → handle register and login
+    → biodata → handle string about me + username, dkk (buat update username)
+    → history → handle activity → user_id, date, result, 
+
+
+To DO:
+    create database → npx sequelize db:create✔
+    foreign key → users(hasOne)✔, biodata(belongs to)✔ → ALREADY SET
+    migrate → npx sequelize db:migrate → Users✔, Biodata✔, History✔
+    set register biar biodata jg lgsg dibikin✔
+    add migration for biodata → add string attributes named description
+npx sequelize migration:generate --name add-description 
+
+
+    CRUD:
+    ✔ Create: register
+    ✔ Read: show everythin expect for password(use dashboard method. Example on node-pg/article) (prefer: read from biodata)
+    - Update: edit email, username, password. Preferably (Use login mechanism too), edit description on biodata
+    - Delete: use destroy method
