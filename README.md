@@ -16,14 +16,15 @@ npm start
 
 ## CRUD Requirement✅
 
-#### Create → Register 
-> Click Sign Up on Navigation Bars in the Home Page
+#### ✔ Create → Register 
+###### Click Sign Up on Navigation Bars in the Home Page
 
 #### ✔ Read → Listing existing Users
-> Click Users on Navigation Bars in the Home Page
+###### Click Users on Navigation Bars in the Home Page
 
 #### ✔ Update → Updating User Information and Bios
-> Enter either Login Page or Sign Up Page → *Click here to change your information*
+###### Enter either Login Page or Sign Up Page → *Click here to change your information*
 
 #### ✔ Delete → Delete existing Users
-> Enter the update page → *Click here to delete your account*
+###### Enter the update page → *Click here to delete your account*
+
