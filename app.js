@@ -4,6 +4,7 @@ const port = process.env.port || 8000;
 const Sequelize = require('sequelize')
 
 const userController = require('./controllers/usercontroller');
+const method = require('./controllers/method');
 
 
 // Setting template engine EJS
@@ -37,14 +38,15 @@ app.get('/register', userController.registerGet)
 app.post('/register', userController.registerPost)
 
 //Read Method here
-app.get('/user_list', userController.user_list)
+app.get('/user_list', method.user_list)
 
 //Update Method here
-app.get('/user_update', userController.updateGet)
-app.post('/user_update', userController.updateInfo) 
+app.get('/user_update', method.updateGet)
+app.post('/user_update', method.updateInfo) 
 
 //Delete Method here
-
+app.get('/user_delete', method.deleteGet)
+app.post('/user_delete', method.deleteDestroy)
 
 app.listen(port, () => {
     console.log(`Go to http://localhost:${port}`)
