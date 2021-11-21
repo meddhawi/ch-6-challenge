@@ -32,13 +32,16 @@ app.get('/login', userController.loginGet)
 app.post('/login', userController.loginPost)
 
 
-//REGISTER PAGE or Create method
+//REGISTER PAGE or Create Method here
 app.get('/register', userController.registerGet)
 app.post('/register', userController.registerPost)
 
-app.get('/users', userController.user_list)
+//Read Method here
+app.get('/user_list', userController.user_list)
 
-
+//Update Method here
+app.get()
+app.post()
 
 app.listen(port, () => {
     console.log(`Go to http://localhost:${port}`)

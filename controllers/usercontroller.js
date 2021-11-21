@@ -111,12 +111,17 @@ module.exports = {
     },
 
     //update method here
-    update_info: async(req, res) =>{
+
+    updateInfo: async(req, res) =>{
         try{
 
         }catch(error){
             console.log(error)
         }
+    },
+
+    updateGet: async(req, res) => {
+        res.render('users/user_update')
     }
 
 }
